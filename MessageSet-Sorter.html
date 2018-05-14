@@ -1,0 +1,378 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>MessageSet-Sorter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<h2 id="toc_0.1">ToolPortModeChange</h2>
+<pre>
+&lt;?xml version="1.0" ?&gt;
+&lt;Transaction TxName="ToolPortModeChange" Type="Request" MessageKey="0001"&gt;
+    &lt;Tool ToolID="CS-SOR-01" EquipmentOnlineMode="On-Line Remote" /&gt;
+    &lt;Ports&gt;
+        &lt;Port PortID="LP1" EquipmentAccessMode="Manual"/&gt;
+        &lt;Port PortID="LP2" EquipmentAccessMode="Manual"/&gt;
+        &lt;Port PortID="LP3" EquipmentAccessMode="Manual"/&gt;
+        &lt;Port PortID="LP4" EquipmentAccessMode="Manual"/&gt;
+    &lt;/Ports&gt;
+&lt;/Transaction&gt;
+
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Transaction TxName="ToolPortModeChange" Type="Ack" SystemErrCode="0" AppErrCode="0" AppErrDescription="0" MessageKey="0001"&gt;
+    &lt;Tool ToolID="CS-SOR-01" EquipmentOnlineMode="On-Line Remote" /&gt;
+    &lt;Ports&gt;
+        &lt;Port PortID="LP1" EquipmentAccessMode="Manual" /&gt;
+        &lt;Port PortID="LP2" EquipmentAccessMode="Manual" /&gt;
+        &lt;Port PortID="LP3" EquipmentAccessMode="Manual" /&gt;
+        &lt;Port PortID="LP4" EquipmentAccessMode="Manual" /&gt;
+    &lt;/Ports&gt;
+&lt;/Transaction&gt;
+</pre>
+
+<h2 id="toc_0.2">ToolModeChangeReport</h2>
+<pre>
+&lt;?xml version="1.0"?&gt;
+&lt;Transaction TxName="ToolModeChangeReport" Type="Event" MessageKey="0001"&gt;
+    &lt;Tool ToolID="CS-SOR-01" EquipmentOnlineMode="On-Line Remote" /&gt;
+&lt;/Transaction&gt;
+</pre>
+
+<h2 id="toc_0.3">ReadyToLoadReport</h2>
+<pre>
+&lt;?xml version="1.0"?&gt;
+&lt;Transaction TxName="ReadyToLoadReport" Type="Event" MessageKey=""&gt;
+    &lt;Tool ToolID="CS-SOR-01" LoadPortID="LP1" CarrierID="" AccessMode="" /&gt;
+&lt;/Transaction&gt;
+</pre>
+
+<h2 id="toc_0.4">LoadCompleteReport</h2>
+<pre>
+&lt;?xml version="1.0"?&gt;
+&lt;Transaction TxName="LoadCompleteReport" Type="Event" MessageKey="0001"&gt;
+    &lt;Tool ToolID="CS-SOR-01" LoadPortID="LP1" CarrierID="ADW-CAST03" AccessMode="" /&gt;
+&lt;/Transaction&gt;
+</pre>
+
+<h2 id="toc_0.5">STCarrierIDReport</h2>
+<pre>
+&lt;?xml version="1.0"?&gt;
+&lt;Transaction TxName="STCarrierIDReport" Type="Event" MessageKey="0003"&gt;
+    &lt;Tool ToolID="CS-SOR-01" LoadPortID="LP2" CarrierID="ADW-CAST04" CarrierKind="FOUP" AccessMode="" /&gt;
+&lt;/Transaction&gt;
+</pre>
+
+<h2 id="toc_0.6">ProceedWithCarrier</h2>
+<pre>
+&lt;?xml version="1.0" ?&gt;
+&lt;Transaction TxName="ProceedWithCarrier" Type="Request" MessageKey="0004"&gt;
+    &lt;Tool ToolID="CS-SOR-01" /&gt;
+    &lt;Carriers&gt;
+        &lt;Carrier CarrierID="ADW-CAST04" LoadPurposeType="Empty Cassette" LoadPortID="LP2"&gt;
+            &lt;SlotMap&gt;&lt;/SlotMap&gt;
+        &lt;/Carrier&gt;
+    &lt;/Carriers&gt;
+&lt;/Transaction&gt;
+
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Transaction TxName="ProceedWithCarrier" Type="Ack" SystemErrCode="0" AppErrCode="0" AppErrDescription="0" MessageKey="0004"&gt;
+    &lt;Tool ToolID="CS-SOR-01" /&gt;
+&lt;/Transaction&gt;
+</pre>
+
+<h2 id="toc_0.7">SlotMapReport</h2>
+<pre>
+&lt;?xml version="1.0"?&gt;
+&lt;Transaction TxName="SlotMapReport" Type="Event" MessageKey="0004"&gt;
+    &lt;Tool ToolID="CS-SOR-01" LoadPortID="LP2" CarrierID="ADW-CAST04" /&gt;
+    &lt;SlotMap /&gt;
+&lt;/Transaction&gt;
+
+&lt;?xml version="1.0"?&gt;
+&lt;Transaction TxName="SlotMapReport" Type="Event" MessageKey="0015"&gt;
+    &lt;Tool ToolID="CS-SOR-01" LoadPortID="LP1" CarrierID="ADW-CAST02" /&gt;
+    &lt;SlotMap&gt;
+        &lt;Slot SlotNo="1"/&gt;
+        &lt;Slot SlotNo="2"/&gt;
+        &lt;Slot SlotNo="3"/&gt;
+        &lt;Slot SlotNo="4"/&gt;
+        &lt;Slot SlotNo="5"/&gt;
+        &lt;Slot SlotNo="6"/&gt;
+        &lt;Slot SlotNo="7"/&gt;
+        &lt;Slot SlotNo="8"/&gt;
+        &lt;Slot SlotNo="9"/&gt;
+        &lt;Slot SlotNo="10"/&gt;
+        &lt;Slot SlotNo="11"/&gt;
+        &lt;Slot SlotNo="12"/&gt;
+        &lt;Slot SlotNo="13"/&gt;
+        &lt;Slot SlotNo="14"/&gt;
+        &lt;Slot SlotNo="15"/&gt;
+        &lt;Slot SlotNo="16"/&gt;
+        &lt;Slot SlotNo="17"/&gt;
+        &lt;Slot SlotNo="18"/&gt;
+        &lt;Slot SlotNo="19"/&gt;
+        &lt;Slot SlotNo="20"/&gt;
+        &lt;Slot SlotNo="21"/&gt;
+        &lt;Slot SlotNo="22"/&gt;
+        &lt;Slot SlotNo="23"/&gt;
+        &lt;Slot SlotNo="24"/&gt;
+    &lt;/SlotMap&gt;
+&lt;/Transaction&gt;
+</pre>
+
+<h2 id="toc_0.8">ProceedSlotMap</h2>
+<pre>
+&lt;?xml version="1.0" ?&gt;
+&lt;Transaction TxName="ProceedSlotMap" Type="Request" MessageKey="0005"&gt;
+    &lt;Tool ToolID="CS-SOR-01" /&gt;
+    &lt;Carriers&gt;
+        &lt;Carrier CarrierID="ADW-CAST04" LoadPurposeType="Empty Cassette" LoadPortID="LP2"&gt;
+            &lt;SlotMap&gt;&lt;/SlotMap&gt;
+        &lt;/Carrier&gt;
+    &lt;/Carriers&gt;
+&lt;/Transaction&gt;
+
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Transaction TxName="ProceedSlotMap" Type="Ack" SystemErrCode="0" AppErrCode="0" AppErrDescription="0" MessageKey="0005"&gt;
+    &lt;Tool ToolID="CS-SOR-01" /&gt;
+&lt;/Transaction&gt;
+
+&lt;?xml version="1.0" ?&gt;
+&lt;Transaction TxName="ProceedSlotMap" Type="Request" MessageKey="0016"&gt;
+    &lt;Tool ToolID="CS-SOR-01" /&gt;
+    &lt;Carriers&gt;
+        &lt;Carrier CarrierID="ADW-CAST02" LoadPurposeType="Other" LoadPortID="LP1"&gt;
+            &lt;SlotMap&gt;
+                &lt;Slot SlotNo="1"&gt;P0000299.000.01&lt;/Slot&gt;
+                &lt;Slot SlotNo="2"&gt;P0000299.000.02&lt;/Slot&gt;
+                &lt;Slot SlotNo="3"&gt;P0000299.000.03&lt;/Slot&gt;
+                &lt;Slot SlotNo="4"&gt;P0000299.000.04&lt;/Slot&gt;
+                &lt;Slot SlotNo="5"&gt;P0000299.000.05&lt;/Slot&gt;
+                &lt;Slot SlotNo="6"&gt;P0000299.000.06&lt;/Slot&gt;
+                &lt;Slot SlotNo="7"&gt;P0000299.000.07&lt;/Slot&gt;
+                &lt;Slot SlotNo="8"&gt;P0000299.000.08&lt;/Slot&gt;
+                &lt;Slot SlotNo="9"&gt;P0000299.000.09&lt;/Slot&gt;
+                &lt;Slot SlotNo="10"&gt;P0000299.000.10&lt;/Slot&gt;
+                &lt;Slot SlotNo="11"&gt;P0000299.000.11&lt;/Slot&gt;
+                &lt;Slot SlotNo="12"&gt;P0000299.000.12&lt;/Slot&gt;
+                &lt;Slot SlotNo="13"&gt;P0000299.000.13&lt;/Slot&gt;
+                &lt;Slot SlotNo="14"&gt;P0000299.000.14&lt;/Slot&gt;
+                &lt;Slot SlotNo="15"&gt;P0000299.000.15&lt;/Slot&gt;
+                &lt;Slot SlotNo="16"&gt;P0000299.000.16&lt;/Slot&gt;
+                &lt;Slot SlotNo="17"&gt;P0000299.000.17&lt;/Slot&gt;
+                &lt;Slot SlotNo="18"&gt;P0000299.000.18&lt;/Slot&gt;
+                &lt;Slot SlotNo="19"&gt;P0000299.000.19&lt;/Slot&gt;
+                &lt;Slot SlotNo="20"&gt;P0000299.000.20&lt;/Slot&gt;
+                &lt;Slot SlotNo="21"&gt;P0000299.000.21&lt;/Slot&gt;
+                &lt;Slot SlotNo="22"&gt;P0000299.000.22&lt;/Slot&gt;
+                &lt;Slot SlotNo="23"&gt;P0000299.000.23&lt;/Slot&gt;
+                &lt;Slot SlotNo="24"&gt;P0000299.000.24&lt;/Slot&gt;
+            &lt;/SlotMap&gt;
+        &lt;/Carrier&gt;
+    &lt;/Carriers&gt;
+&lt;/Transaction&gt;
+
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Transaction TxName="ProceedSlotMap" Type="Ack" SystemErrCode="0" AppErrCode="0" AppErrDescription="0" MessageKey="0016"&gt;
+    &lt;Tool ToolID="CS-SOR-01" /&gt;
+&lt;/Transaction&gt;
+</pre>
+
+<h2 id="toc_0.9">CreateSorterControlJob</h2>
+<pre>
+&lt;?xml version="1.0" ?&gt;
+&lt;Transaction TxName="CreateSorterControlJob" Type="Request" MessageKey="0019"&gt;
+    &lt;Tool ToolID="CS-SOR-01" /&gt;
+    &lt;ControlJob ControlJobID="CS-SOR-01-0001" /&gt;
+    &lt;ActionCode Code="WaferIDRead" ReadWaferID="0" /&gt;
+    &lt;SourceMap&gt;
+        &lt;Carriers&gt;
+            &lt;Carrier CarrierID="ADW-CAST02" LoadPurposeType="" LoadPortID="LP1"&gt;
+                &lt;SlotMap&gt;
+                    &lt;Slot SlotNo="1" &gt;P0000299.000.01&lt;/Slot&gt;
+                    &lt;Slot SlotNo="2" &gt;P0000299.000.02&lt;/Slot&gt;
+                    &lt;Slot SlotNo="3" &gt;P0000299.000.03&lt;/Slot&gt;
+                    &lt;Slot SlotNo="4" &gt;P0000299.000.04&lt;/Slot&gt;
+                    &lt;Slot SlotNo="5" &gt;P0000299.000.05&lt;/Slot&gt;
+                    &lt;Slot SlotNo="6" &gt;P0000299.000.06&lt;/Slot&gt;
+                    &lt;Slot SlotNo="7" &gt;P0000299.000.07&lt;/Slot&gt;
+                    &lt;Slot SlotNo="8" &gt;P0000299.000.08&lt;/Slot&gt;
+                    &lt;Slot SlotNo="9" &gt;P0000299.000.09&lt;/Slot&gt;
+                    &lt;Slot SlotNo="10" &gt;P0000299.000.10&lt;/Slot&gt;
+                    &lt;Slot SlotNo="11" &gt;P0000299.000.11&lt;/Slot&gt;
+                    &lt;Slot SlotNo="12" &gt;P0000299.000.12&lt;/Slot&gt;
+                    &lt;Slot SlotNo="13" &gt;P0000299.000.13&lt;/Slot&gt;
+                    &lt;Slot SlotNo="14" &gt;P0000299.000.14&lt;/Slot&gt;
+                    &lt;Slot SlotNo="15" &gt;P0000299.000.15&lt;/Slot&gt;
+                    &lt;Slot SlotNo="16" &gt;P0000299.000.16&lt;/Slot&gt;
+                    &lt;Slot SlotNo="17" &gt;P0000299.000.17&lt;/Slot&gt;
+                    &lt;Slot SlotNo="18" &gt;P0000299.000.18&lt;/Slot&gt;
+                    &lt;Slot SlotNo="19" &gt;P0000299.000.19&lt;/Slot&gt;
+                    &lt;Slot SlotNo="20" &gt;P0000299.000.20&lt;/Slot&gt;
+                    &lt;Slot SlotNo="21" &gt;P0000299.000.21&lt;/Slot&gt;
+                    &lt;Slot SlotNo="22" &gt;P0000299.000.22&lt;/Slot&gt;
+                    &lt;Slot SlotNo="23" &gt;P0000299.000.23&lt;/Slot&gt;
+                    &lt;Slot SlotNo="24" &gt;P0000299.000.24&lt;/Slot&gt;
+                &lt;/SlotMap&gt;
+            &lt;/Carrier&gt;
+        &lt;/Carriers&gt;
+    &lt;/SourceMap&gt;
+    &lt;DestinationMap&gt;
+        &lt;Carriers&gt;
+            &lt;Carrier CarrierID="ADW-CAST02" LoadPurposeType="" LoadPortID="LP1"&gt;
+                &lt;SlotMap&gt;
+                    &lt;Slot SlotNo="1" &gt;P0000299.000.01&lt;/Slot&gt;
+                    &lt;Slot SlotNo="2" &gt;P0000299.000.02&lt;/Slot&gt;
+                    &lt;Slot SlotNo="3" &gt;P0000299.000.03&lt;/Slot&gt;
+                    &lt;Slot SlotNo="4" &gt;P0000299.000.04&lt;/Slot&gt;
+                    &lt;Slot SlotNo="5" &gt;P0000299.000.05&lt;/Slot&gt;
+                    &lt;Slot SlotNo="6" &gt;P0000299.000.06&lt;/Slot&gt;
+                    &lt;Slot SlotNo="7" &gt;P0000299.000.07&lt;/Slot&gt;
+                    &lt;Slot SlotNo="8" &gt;P0000299.000.08&lt;/Slot&gt;
+                    &lt;Slot SlotNo="9" &gt;P0000299.000.09&lt;/Slot&gt;
+                    &lt;Slot SlotNo="10" &gt;P0000299.000.10&lt;/Slot&gt;
+                    &lt;Slot SlotNo="11" &gt;P0000299.000.11&lt;/Slot&gt;
+                    &lt;Slot SlotNo="12" &gt;P0000299.000.12&lt;/Slot&gt;
+                    &lt;Slot SlotNo="13" &gt;P0000299.000.13&lt;/Slot&gt;
+                    &lt;Slot SlotNo="14" &gt;P0000299.000.14&lt;/Slot&gt;
+                    &lt;Slot SlotNo="15" &gt;P0000299.000.15&lt;/Slot&gt;
+                    &lt;Slot SlotNo="16" &gt;P0000299.000.16&lt;/Slot&gt;
+                    &lt;Slot SlotNo="17" &gt;P0000299.000.17&lt;/Slot&gt;
+                    &lt;Slot SlotNo="18" &gt;P0000299.000.18&lt;/Slot&gt;
+                    &lt;Slot SlotNo="19" &gt;P0000299.000.19&lt;/Slot&gt;
+                    &lt;Slot SlotNo="20" &gt;P0000299.000.20&lt;/Slot&gt;
+                    &lt;Slot SlotNo="21" &gt;P0000299.000.21&lt;/Slot&gt;
+                    &lt;Slot SlotNo="22" &gt;P0000299.000.22&lt;/Slot&gt;
+                    &lt;Slot SlotNo="23" &gt;P0000299.000.23&lt;/Slot&gt;
+                    &lt;Slot SlotNo="24" &gt;P0000299.000.24&lt;/Slot&gt;
+                &lt;/SlotMap&gt;
+            &lt;/Carrier&gt;
+        &lt;/Carriers&gt;
+    &lt;/DestinationMap&gt;
+&lt;/Transaction&gt;
+
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Transaction TxName="CreateSorterControlJob" Type="Ack" SystemErrCode="0" AppErrCode="0" AppErrDescription="0" MessageKey="0019"&gt;
+    &lt;Tool ToolID="CS-SOR-01" /&gt;
+    &lt;ControlJob ControlJobID="CS-SOR-01-0001" /&gt;
+&lt;/Transaction&gt;
+</pre>
+
+<h2 id="toc_0.10">SorterControlJobStartReport</h2>
+<pre>
+&lt;?xml version="1.0"?&gt;
+&lt;Transaction TxName="SorterControlJobStartReport" Type="Event" MessageKey="0019"&gt;
+    &lt;Tool ToolID="CS-SOR-01" /&gt;
+    &lt;ControlJob ControlJobID="CS-SOR-01-0001" /&gt;
+&lt;/Transaction&gt;
+</pre>
+
+<h2 id="toc_0.11">SorterControlJobEndReport</h2>
+<pre>
+&lt;?xml version="1.0"?&gt;
+&lt;Transaction TxName="SorterControlJobEndReport" Type="Event" MessageKey="0019"&gt;
+    &lt;Tool ToolID="CS-SOR-01" /&gt;
+    &lt;ControlJob ControlJobID="CS-SOR-01-0001" NormalEndFlag="1" /&gt;
+    &lt;ActionCode Code="WaferIDRead" ReadWaferID="0" /&gt;
+    &lt;SourceMap&gt;
+        &lt;Carriers&gt;
+            &lt;Carrier CarrierID="ADW-CAST02" LoadPurposeType="" LoadPortID="LP1"&gt;
+                &lt;SlotMap /&gt;
+            &lt;/Carrier&gt;
+        &lt;/Carriers&gt;
+    &lt;/SourceMap&gt;
+    &lt;DestinationMap&gt;
+        &lt;Carriers&gt;
+            &lt;Carrier CarrierID="ADW-CAST02" LoadPurposeType="" LoadPortID="LP1"&gt;
+                &lt;SlotMap&gt;
+                    &lt;Slot SlotNo="1"&gt;P0000299.000.01&lt;/Slot&gt;
+                    &lt;Slot SlotNo="2"&gt;P0000299.000.02&lt;/Slot&gt;
+                    &lt;Slot SlotNo="3"&gt;P0000299.000.03&lt;/Slot&gt;
+                    &lt;Slot SlotNo="4"&gt;P0000299.000.04&lt;/Slot&gt;
+                    &lt;Slot SlotNo="5"&gt;P0000299.000.05&lt;/Slot&gt;
+                    &lt;Slot SlotNo="6"&gt;P0000299.000.06&lt;/Slot&gt;
+                    &lt;Slot SlotNo="7"&gt;P0000299.000.07&lt;/Slot&gt;
+                    &lt;Slot SlotNo="8"&gt;P0000299.000.08&lt;/Slot&gt;
+                    &lt;Slot SlotNo="9"&gt;P0000299.000.09&lt;/Slot&gt;
+                    &lt;Slot SlotNo="10"&gt;P0000299.000.10&lt;/Slot&gt;
+                    &lt;Slot SlotNo="11"&gt;P0000299.000.11&lt;/Slot&gt;
+                    &lt;Slot SlotNo="12"&gt;P0000299.000.12&lt;/Slot&gt;
+                    &lt;Slot SlotNo="13"&gt;P0000299.000.13&lt;/Slot&gt;
+                    &lt;Slot SlotNo="14"&gt;P0000299.000.14&lt;/Slot&gt;
+                    &lt;Slot SlotNo="15"&gt;P0000299.000.15&lt;/Slot&gt;
+                    &lt;Slot SlotNo="16"&gt;P0000299.000.16&lt;/Slot&gt;
+                    &lt;Slot SlotNo="17"&gt;P0000299.000.17&lt;/Slot&gt;
+                    &lt;Slot SlotNo="18"&gt;P0000299.000.18&lt;/Slot&gt;
+                    &lt;Slot SlotNo="19"&gt;P0000299.000.19&lt;/Slot&gt;
+                    &lt;Slot SlotNo="20"&gt;P0000299.000.20&lt;/Slot&gt;
+                    &lt;Slot SlotNo="21"&gt;P0000299.000.21&lt;/Slot&gt;
+                    &lt;Slot SlotNo="22"&gt;P0000299.000.22&lt;/Slot&gt;
+                    &lt;Slot SlotNo="23"&gt;P0000299.000.23&lt;/Slot&gt;
+                    &lt;Slot SlotNo="24"&gt;P0000299.000.24&lt;/Slot&gt;
+                &lt;/SlotMap&gt;
+            &lt;/Carrier&gt;
+        &lt;/Carriers&gt;
+    &lt;/DestinationMap&gt;
+&lt;/Transaction&gt;
+
+Usage: - LoadPurposeType: "Empty Cassette" / "Filler Dummy Lot" / "Process Lot" /
+                          "Process Monitor Lot" / "Side Dummy Lot" / 
+                          "Waiting Monitor Lot" / "Any Purpose" / "Other" / 
+                          "Internal Buffer Eqp"
+
+Usage: - ActionCode= "JustIn" / "JustOut" / "PositionChange" / "ScrapWafer" /
+                     "WaferIDMiniRead" / "WaferIDRead" / "SlotMapAdjust" / 
+                     "VendorLotReceiveAndPrepare" / "EndSorterOperation" / 
+                     "AutoSorting"
+</pre>
+
+
+<h2 id="toc_0.12">STCarrierRelease</h2>
+<pre>
+&lt;?xml version="1.0" ?&gt;
+&lt;Transaction TxName="STCarrierRelease" Type="Request" MessageKey="0036"&gt;
+    &lt;Tool ToolID="CS-SOR-01" /&gt;
+    &lt;Carriers&gt;
+        &lt;Carrier CarrierID="ADW-CAST02" PortID="LP1" /&gt;
+        &lt;Carrier CarrierID="ADW-CAST05" PortID="LP2" /&gt;
+    &lt;/Carriers&gt;
+&lt;/Transaction&gt;
+</pre>
+
+<h2 id="toc_0.13">ReadyToUnloadReport</h2>
+<pre>
+&lt;?xml version="1.0"?&gt;
+&lt;Transaction TxName="ReadyToUnloadReport" Type="Event" MessageKey=""&gt;
+    &lt;Tool ToolID="CS-SOR-01" UnloadPortID="LP2" CarrierID="ADW-CAST04" AccessMode="" /&gt;
+&lt;/Transaction&gt;
+</pre>
+
+<h2 id="toc_0.14">UnloadCompleteReport</h2>
+<pre>
+&lt;?xml version="1.0"?&gt;
+&lt;Transaction TxName="UnloadCompleteReport" Type="Event" MessageKey=""&gt;
+    &lt;Tool ToolID="CS-SOR-01" UnloadPortID="LP2" CarrierID="ADW-CAST04" AccessMode="" /&gt;
+&lt;/Transaction&gt;
+</pre>
+
+<h2 id="toc_0.15">LoadCompleteReport</h2>
+<pre>
+&lt;?xml version="1.0"?&gt;
+&lt;Transaction TxName="CancelSorterControlJob" Type="Request" MessageKey="0000"&gt;
+    &lt;Tool ToolID="CS-SOR-01" /&gt;
+    &lt;ControlJob ControlJobID="tool-id-yyyymmdd-seq#"/&gt;
+    &lt;Carriers&gt;
+        &lt;Carrier CarrierID="CAR01" LoadPurposeType="" LoadPortID="LP1"&gt;&lt;/Carrier&gt;
+        &lt;Carrier CarrierID="CAR02" LoadPurposeType="" LoadPortID="LP2"&gt;&lt;/Carrier&gt;
+    &lt;/Carriers&gt;
+&lt;/Transaction&gt;
+</pre>
+
+<h2 id="toc_0.16">LoadCompleteReport</h2>
+<pre>
+</pre>
+
+</body>
+</html>
